@@ -22,4 +22,8 @@ public class GreetingControllerTest {
         Greeting controller = this.greetingController.greeting(null);
         assertEquals("Hello, World!", controller.getContent());
     }
+
+    private void t(){
+
+    }
 }
