@@ -19,7 +19,7 @@ public class GreetingControllerTest {
      */
     @Test
     public void nullNameTest() {
-        Greeting controller = this.greetingController.greeting(null);
+        Greeting controller = this.greetingController.addGreeting(null);
         assertEquals("Hello, null!", controller.getContent());
     }
 
@@ -28,7 +28,7 @@ public class GreetingControllerTest {
      */
     @Test
     public void notNullNameTest() {
-        Greeting controller = this.greetingController.greeting("Test");
+        Greeting controller = this.greetingController.addGreeting("Test");
         assertEquals("Hello, Test!", controller.getContent());
     }
 
