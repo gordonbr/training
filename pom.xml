@@ -5,8 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.jonathas.training</groupId>
-  <artifactId>Training</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>training-app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -103,7 +103,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
@@ -125,24 +125,16 @@
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.2</version>
           <executions>
             <execution>
               <goals>
-                <goal>prepare-agent</goal>
+                <goal>repackage</goal>
               </goals>
-            </execution>
-            <!-- attached to Maven test phase -->
-            <execution>
-              <id>report</id>
-              <phase>test</phase>
-              <goals>
-                <goal>report</goal>
-              </goals>
+              <configuration>
+                <classifier>spring-boot</classifier>
+                <mainClass>com.jonathas.training.App</mainClass>
+                <outputDirectory>${project.basedir}/docker</outputDirectory>
+              </configuration>
             </execution>
           </executions>
         </plugin>
